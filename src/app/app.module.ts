@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { ComuneDetailComponent } from './components/comune-detail/comune-detail.component';
+import { TableViewComponent } from './components/table-view/table-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainMenuComponent,
-    ComuneDetailComponent
+    ComuneDetailComponent,
+    TableViewComponent
   ],
   imports: [
     BrowserModule,
