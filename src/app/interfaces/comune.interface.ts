@@ -1,8 +1,20 @@
-import { IDomicilio } from "./domicilio.interface";
-import { IResidenza } from "./residenza.interface";
-
 export interface IComune {
+    codice: string;
     nome: string;
-    residenti: IResidenza[];
-    domiciliati: IDomicilio[];
+    nomeStraniero: string;
+    codiceCatastale: string;
+    cap: string;
+    prefisso: string;
+    provincia: {
+        nome: string,
+        regione: string
+    }
+    email: string;
+    pec: string;
+    telefono: string;
+    fax: string;
+    coordinate: {
+        lat: number,
+        lng: number
+    }
 }

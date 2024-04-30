@@ -1,6 +1,6 @@
-import { IComune } from "./comune.interface";
-
 export interface IProvincia {
+    codice: string;
     nome: string;
-    comuni: IComune[];
+    sigla: string;
+    regione: string;
 }
