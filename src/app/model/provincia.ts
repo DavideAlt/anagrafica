@@ -1,16 +1,15 @@
 import { IProvincia } from "../interfaces/provincia.interface";
 
 export class Provincia{
-
     nome: string;
     regione: string;
 
-    constructor(iprovincia: IProvincia) {
-      this.nome = iprovincia.nome;
-      this.regione = iprovincia.regione;
+    constructor(nome: string, regione: string) {
+      this.nome = nome;
+      this.regione = regione;
     }
 
-    //public mapFromDTO(ip: IProvincia): Provincia {
-    //    
-    //}
+    public static mapToProvince(iprovince: IProvincia[]): Provincia[] {
+        return iprovince.map(prov => new Provincia(prov.nome, prov.regione));
+    }
 }

@@ -1,3 +1,23 @@
-<p>main-menu works!</p>
+<!-- <div *ngFor="let reg of regioni">
+    <h2>{{ reg.nome }}</h2>
+    <div *ngFor="let pro of province">
+        <div *ngIf="pro.regione === reg.nome">
+            <h3>{{ pro.nome }}</h3>
+            <div *ngFor="let com of comuni">
+                <p *ngIf="com.provincia === pro.nome">
+                    {{ com.nome }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div> -->
 
-<p *ngFor="let r of regioni"> {{r.nome}} </p>
+
+<div class="regione" *ngFor="let r of regioni">
+    <button (click)="requestProvince(r.nome)"> 
+        {{r.nome}} 
+    </button>
+    <div *ngFor="let p of province">
+        <app-provincia-detail *ngIf="r.nome === p.regione" [provincia]="p"></app-provincia-detail>
+    </div>
+</div>

@@ -1,5 +1,3 @@
-import { IRegione } from "../interfaces/regione.interface";
-
 export class Regione{
     public nome: string;
 
@@ -7,8 +5,7 @@ export class Regione{
         this.nome = nome;
     }
 
-    public mapToRegioni(iregione: IRegione): Regione{
-        this.nome = iregione.nome;
-        return new Regione(this.nome);
+    public static mapToRegioni(iregioni: string[]): Regione[] {
+        return iregioni.map(nome => new Regione(nome));
     }
 }

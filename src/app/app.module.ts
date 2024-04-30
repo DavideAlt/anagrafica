@@ -8,13 +8,15 @@ import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { ComuneDetailComponent } from './components/comune-detail/comune-detail.component';
 import { TableViewComponent } from './components/table-view/table-view.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProvinciaDetailComponent } from './components/provincia-detail/provincia-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainMenuComponent,
     ComuneDetailComponent,
-    TableViewComponent
+    TableViewComponent,
+    ProvinciaDetailComponent
   ],
   imports: [
     BrowserModule,
