@@ -1,9 +1,6 @@
-<h1> {{title}} </h1>
-<nav style="background-color: azure; padding: 1em;">
-  <ul>
-    <li><a routerLink="/main-menu" routerLinkActive="active">main-menu</a></li>
-    <li><a routerLink="/comune-detail/:nome" routerLinkActive="active">comune</a></li>
-    <li><a routerLink="/table-view" routerLinkActive="active">tabella</a></li>
-  </ul>
+<nav style="display: flex;">
+   <a routerLink="/main-menu" routerLinkActive="active">main-menu1</a>
+   <span>|</span>
+   <a routerLink="/main-menu" routerLinkActive="active">main-menu2</a>
 </nav>
 <router-outlet />

@@ -1,7 +1,20 @@
-.regione {
-    margin: 1em;
+/* Stile generale per i div */
+  div {
+  margin-bottom: 1em;
 }
 
-* {
-    margin: 0;
+/* Stile per i menu a tendina */
+select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 1em;
 }
+
+/* Stile per gli spazi tra i menu a tendina */
+span {
+  display: inline-block;
+  width: 10px; /* Regola la larghezza dello spazio tra i menu */
+}
+  

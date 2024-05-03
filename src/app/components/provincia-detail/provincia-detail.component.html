@@ -1,8 +1,0 @@
-<div>
-    <button (click)="requestComuni(provincia.nome)">
-        {{provincia.nome}}
-    </button>
-    <div *ngFor="let c of comuni">
-        <app-comune-detail *ngIf="provincia.nome === c.provincia" [comune]="c"></app-comune-detail>
-    </div>
-</div>

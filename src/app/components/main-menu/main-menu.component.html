@@ -1,23 +1,23 @@
-<!-- <div *ngFor="let reg of regioni">
-    <h2>{{ reg.nome }}</h2>
-    <div *ngFor="let pro of province">
-        <div *ngIf="pro.regione === reg.nome">
-            <h3>{{ pro.nome }}</h3>
-            <div *ngFor="let com of comuni">
-                <p *ngIf="com.provincia === pro.nome">
-                    {{ com.nome }}
-                </p>
-            </div>
-        </div>
-    </div>
-</div> -->
+<div>REGIONE: </div>
+<select (change)="cambioRegione()" [(ngModel)]="regioneCorrente">
+    <option *ngFor="let r of regioni" [ngValue]="r"> {{r.nome}} </option>
+</select>
 
+<span></span>
 
-<div class="regione" *ngFor="let r of regioni">
-    <button (click)="requestProvince(r.nome)"> 
-        {{r.nome}} 
-    </button>
-    <div *ngFor="let p of province">
-        <app-provincia-detail *ngIf="r.nome === p.regione" [provincia]="p"></app-provincia-detail>
-    </div>
-</div>
+<div>PROVINCIA: </div>
+<select *ngIf="regioneCorrente" (change)="cambioProvincia()" [(ngModel)]="provinciaCorrente">
+    <option *ngFor="let p of province" [ngValue]="p"> {{p.nome}} </option>
+</select>
+
+<span></span>
+
+<div>COMUNE: </div>
+<!-- <select *ngIf="provinciaCorrente" (change)="cambioComune()" [(ngModel)]="comuneCorrente"> -->
+<select *ngIf="provinciaCorrente" [(ngModel)]="comuneCorrente">
+    <option *ngFor="let c of comuni" [ngValue]="c"> {{c.nome}} </option>
+</select>
+
+<span></span>
+
+<button *ngIf="comuneCorrente && comuneCorrente?.nome !== ''" (click)="navigaAComune()"> Vai al comune</button>

@@ -33,9 +33,9 @@ export class ComuniService {
     );
   }
 
-  getComuni(provinciaRegione?: string): Observable<Comune[]> {
-    if (provinciaRegione) {
-      return this._http.get<IComune[]>(`${this._apiUrl}/comuni/provincia/${provinciaRegione}`).pipe(
+  getComuni(provincia?: string): Observable<Comune[]> {
+    if (provincia) {
+      return this._http.get<IComune[]>(`${this._apiUrl}/comuni/provincia/${provincia}`).pipe(
         map(icomuni => Comune.mapToComuni(icomuni))
       );
     }

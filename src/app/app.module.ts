@@ -6,22 +6,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { ComuneDetailComponent } from './components/comune-detail/comune-detail.component';
-import { TableViewComponent } from './components/table-view/table-view.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ProvinciaDetailComponent } from './components/provincia-detail/provincia-detail.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainMenuComponent,
-    ComuneDetailComponent,
-    TableViewComponent,
-    ProvinciaDetailComponent
+    ComuneDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot([])
   ],
   providers: [],
