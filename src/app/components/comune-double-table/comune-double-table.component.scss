@@ -1,0 +1,22 @@
+
+table:nth-child(even) {
+    background-color: pink;
+}
+
+table:nth-child(odd) {
+    background-color: lightblue;
+}
+
+table {
+    margin: 1em;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container table {
+    flex: 1 0 auto;
+    margin: 10px;
+}

@@ -6,3 +6,59 @@ button {
     margin-left: 4em;
     margin-bottom: 0.5em;
 }
+
+span {
+    margin: 1em;
+}
+
+table {
+    margin: 2em;
+}
+
+form {
+    padding: 1em;
+}
+
+.tabelle-wrapper {
+    display: flex;
+    background-color: aliceblue;
+    padding: 1em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #f2f2f2;
+    padding: 8px;
+    text-align: left;
+}
+
+td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.checkbox-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.checkbox-container label {
+    margin-right: 10px; /* Spazio tra le etichette e i checkbox */
+}
+
+.checkbox-container input[type="checkbox"] {
+    cursor: pointer; /* Cambia il cursore quando si passa sopra il checkbox */
+}

@@ -1,0 +1,19 @@
+<h2>{{tableType === 'res' ? 'Residenti' : 'Domiciliati'}}</h2>
+<table>
+    <thead>
+        <tr>
+            <th>C.F. </th>
+            <th>NOME </th>
+            <th>COGNOME </th>
+        </tr>
+    </thead>
+    <tr *ngFor="let p of persone">
+        <td> {{p.codiceFiscale}} </td>
+        <td> {{p.nome}} </td>
+        <td> {{p.cognome}} </td>
+    </tr>
+</table>
+
+<br><br>
+
+<button (click)="openDialog()"> Aggiungi {{tableType === 'res' ? 'residente' : 'domiciliato'}} </button>

@@ -1,0 +1,10 @@
+<h2>Residenti e domiciliati</h2>
+<div class="container">
+    <table *ngFor="let p of getPersone()">
+        <thead>
+            {{p.codiceFiscale}}
+        </thead>
+        <tr *ngIf="residenti.includes(p)">residente</tr>
+        <tr *ngIf="domiciliati.includes(p)">domiciliato</tr>
+    </table>
+</div>

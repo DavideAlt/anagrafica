@@ -6,7 +6,7 @@ import { ComuneDetailComponent } from './components/comune-detail/comune-detail.
 const routes: Routes = [
   { path: '', redirectTo: '/main-menu', pathMatch: 'full' },
   { path: 'main-menu', component: MainMenuComponent },
-  { path: 'comune-detail/:nome', component: ComuneDetailComponent }
+  { path: 'comune-detail/:regione/:provincia/:comune', component: ComuneDetailComponent }
 ];
 
 @NgModule({

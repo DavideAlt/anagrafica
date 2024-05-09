@@ -1,10 +1,9 @@
-import { IDomicilio } from "./domicilio.interface";
-import { IResidenza } from "./residenza.interface";
+import { IComune } from "./comune.interface";
 
 export interface IPersona {
     codiceFiscale: string;
     nome: string;
     cognome: string;
-    residenza: IResidenza;
-    domicilio: IDomicilio;
+    residenza: IComune;
+    domicilio: IComune;
 }

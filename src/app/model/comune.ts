@@ -1,12 +1,11 @@
 import { IComune } from "../interfaces/comune.interface";
-import { Domicilio } from "./domicilio";
-import { Residenza } from "./residenza";
+import { Persona } from "./persona";
 
 export class Comune{
     nome: string;
     provincia: string;
-    residenti: Residenza[];
-    domiciliati: Domicilio[];
+    residenti: Persona[];
+    domiciliati: Persona[];
 
     constructor (nome: string, provincia: string) {
         this.nome = nome;

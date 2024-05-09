@@ -1,13 +1,11 @@
-import { IPersona } from "../interfaces/persona.interface";
-import { Domicilio } from "./domicilio";
-import { Residenza } from "./residenza";
+import { Comune } from "./comune";
 
-export class Persona implements IPersona {
+export class Persona {
     constructor(
         public readonly codiceFiscale: string,
         public readonly nome: string,
         public readonly cognome: string,
-        public readonly residenza: Residenza,
-        public readonly domicilio: Domicilio
+        public readonly residenza: Comune,
+        public readonly domicilio: Comune
     ) { }
 }

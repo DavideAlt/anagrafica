@@ -1,0 +1,63 @@
+<form #personaForm="ngForm">
+    <div>AGGIUNGI PERSONA: </div>
+    <br><br>
+    <label for="cf">C.F.</label><br>
+    <input
+        type="text" 
+        id="cf" 
+        name="cf"
+        placeholder="Codice Fiscale"
+        [(ngModel)]="data.cf" 
+        pattern="^[A-Za-z]{6}[0-9]{2}[A-Za-z]{1}[0-9]{2}[A-Za-z]{1}[0-9]{3}[A-Za-z]{1}$"
+        #cfInput="ngModel"
+        required
+    >
+    <div *ngIf="cfInput.invalid && (cfInput.dirty || cfInput.touched)" class="error">
+        <div *ngIf="cfInput.errors?.['required']">cf obbligatorio</div>
+        <div *ngIf="cfInput.errors?.['pattern']">cf invalido</div>
+    </div>
+    <br><br>
+  
+    <label for="nome">Nome</label><br>
+    <input 
+        type="text"
+        id="nome"
+        name="nome"
+        [(ngModel)]="data.nome"
+        placeholder="Nome"
+        pattern="^([ \u00c0-\u01ffa-zA-Z'\-])+$"
+        #nomeInput="ngModel"
+        minlength="2"
+        required
+    >
+    <div *ngIf="nomeInput.invalid && (nomeInput.dirty || nomeInput.touched)" class="error">
+        <div *ngIf="nomeInput.errors?.['required']">obbligatorio</div>
+        <div *ngIf="nomeInput.errors?.['pattern']">invalido</div>
+        <div *ngIf="nomeInput.errors?.['minlength']">almeno 2 caratteri</div>
+    </div>
+    <br><br>
+  
+    <label for="cognome">Cognome</label><br>
+    <input 
+        type="text"
+        id="cognome"
+        name="cognome"
+        [(ngModel)]="data.cognome"
+        placeholder="Cognome"
+        pattern="^([ \u00c0-\u01ffa-zA-Z'\-])+$"
+        #cognomeInput="ngModel"
+        minlength="2"
+        required
+    >
+    <div *ngIf="cognomeInput.invalid && (cognomeInput.dirty || cognomeInput.touched)" class="error">
+        <div *ngIf="cognomeInput.errors?.['required']">obbligatorio</div>
+        <div *ngIf="cognomeInput.errors?.['pattern']">invalido</div>
+        <div *ngIf="cognomeInput.errors?.['minlength']">almeno 2 caratteri</div>
+    </div>
+    <br><br>
+  
+    
+    <button mat-button (click)="onNoClick()">Chiudi finestra</button>
+    <span></span>
+    <input type="submit" value="Invia" [disabled]="personaForm.invalid" (click)="sendData(data.cf, data.nome, data.cognome)">
+</form>

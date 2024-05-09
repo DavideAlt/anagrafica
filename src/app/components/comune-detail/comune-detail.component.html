@@ -1,3 +1,28 @@
-<div>
+<h2>
     Comune di {{comune.nome}}, provincia di {{comune.provincia}}
-</div>
+</h2>
+
+<div class="tabelle-wrapper">
+    <div class="checkbox-container">
+        <div>
+            <br><br>
+            MOSTRA: 
+            <br><br><br><br>
+        </div>
+
+        <form>
+            <input id="res" type="radio" value="res_dom" name="res_dom" (click)="onRadioChange('res')"> RESIDENTI
+            <label for="res"></label><br>
+            <input id="dom" type="radio" name="res_dom" (click)="onRadioChange('dom')"> DOMICILIATI
+            <label for="dom"></label><br>
+            <input id="resdom" type="radio" value="res_dom" name="res_dom" (click)="onRadioChange('res_dom')"> RESIDENTI E DOMICILIATI
+            <label for="resom"></label><br>
+        </form>
+
+        <br><br><br><br>
+    </div>
+
+    <div app-comune-single-table *ngIf="showResidentiTable && !showDomiciliatiTable" [persone]="comune.residenti" [tableType]="'res'" (addPersona)="handleNewResidente($event)"></div>
+    <div app-comune-single-table *ngIf="showDomiciliatiTable && !showResidentiTable" [persone]="comune.domiciliati" [tableType]="'dom'" (addPersona)="handleNewDomiciliato($event)"></div>
+    <div app-comune-double-table *ngIf="showResidentiTable && showDomiciliatiTable" [comune]="comune" [residenti]="comune.residenti" [domiciliati]="comune.domiciliati"></div>
+</div>  
